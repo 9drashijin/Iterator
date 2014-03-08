@@ -110,3 +110,52 @@ void test_getElement_given_5_in_List_with_last_is_data_4_should_return_the_eleme
 	TEST_ASSERT_NOT_NULL(returnElem);
 	TEST_ASSERT_EQUAL(4, returnElem->data);
 }
+void test_getElement_given_6_in_List_with_last_is_data_4_should_return_the_element(void){
+	LinkedList list;
+	Iterator iterator = {.next=getNext};
+	Element elem[] = {{.data = 1},
+					  {.data = 3},
+					  {.data = 4},
+					  {.data = 5},
+					  {.data = 6},
+					  {.data = 7}};
+	Element *returnElem;
+	
+	getIterator_ExpectAndReturn(&list,&iterator);
+	getNext_ExpectAndReturn(&elem[0]);
+	getNext_ExpectAndReturn(&elem[1]);
+	getNext_ExpectAndReturn(&elem[2]);
+
+	
+	//Call SuT
+	printf("======TEST 6=====\n");
+	returnElem = getElement(&list , 4);
+	
+	TEST_ASSERT_NOT_NULL(returnElem);
+	TEST_ASSERT_EQUAL(4, returnElem->data);
+}
+void test_getElement_given_7_in_List_with_last_is_data_4_should_return_the_element(void){
+	LinkedList list;
+	Iterator iterator = {.next=getNext};
+	Element elem[] = {{.data = 1},
+					  {.data = 3},
+					  {.data = 4},
+					  {.data = 5},
+					  {.data = 6},
+					  {.data = 7},
+					  {.data = 8}};
+	Element *returnElem;
+	
+	getIterator_ExpectAndReturn(&list,&iterator);
+	getNext_ExpectAndReturn(&elem[0]);
+	getNext_ExpectAndReturn(&elem[1]);
+	getNext_ExpectAndReturn(&elem[2]);
+
+	
+	//Call SuT
+	printf("======TEST 7=====\n");
+	returnElem = getElement(&list , 4);
+	
+	TEST_ASSERT_NOT_NULL(returnElem);
+	TEST_ASSERT_EQUAL(4, returnElem->data);
+}
